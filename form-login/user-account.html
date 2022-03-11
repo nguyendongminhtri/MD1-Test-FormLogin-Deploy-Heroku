@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>USER ACCOUNT Welcome</h1>
+<h1 id="account"></h1>
+</body>
+</html>
+<script>
+    let username = window.localStorage.getItem('USER_KEY');
+    document.getElementById('account').innerHTML = username;
+</script>
