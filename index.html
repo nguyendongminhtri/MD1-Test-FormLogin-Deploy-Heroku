@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: rgba(178,255,121,0.94)">
-    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-brand" onclick="comeBackHome()">Home</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,17 +19,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="form-login/register.html">Register <span class="sr-only">(current)</span></a>
+                <a id="register" class="nav-link" href="form-login/register.html">Register <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" id="login" href="form-login/login.html">Login</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="form-login/login.html">Login</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
@@ -186,7 +186,15 @@
 </body>
 </html>
 <script>
-
+    function comeBackHome() {
+        console.log('comeback')
+        window.location.href = 'index.html';
+    }
+    let username = window.localStorage.getItem('USER_KEY');
+    if(username!=null){
+        document.getElementById('register').innerHTML = ''
+        document.getElementById('login').innerHTML = username
+    }
     let studentList = [];
     let student1 = new Student(1, 'Tiến Long', 18)
     let student2 = new Student(2, 'Quốc Anh', 16)
